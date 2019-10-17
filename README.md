@@ -2,6 +2,17 @@
 
 ## prepare
 
+### Prepare for smach and smach_viewer (ubuntu 18.04 melodic)
+```
+$ sudo apt install python-wxgtk2.8
+$ sudo apt install python-gi-cairo
+$ cd ~/catekin_ws/src
+$ git clone https://github.com/ros/executive_smach.git
+$ git clone -b melodic-devel https://github.com/k-okada/executive_smach_visualization.git
+$ cd ~/catekin_ws
+$ catekin_make
+```
+
 ### download and setup
 ```
 $ cd ~/catkin_ws/src
