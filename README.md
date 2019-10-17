@@ -20,20 +20,20 @@ $ roscore
 $ rosrun smach_viewer smach_viewer.py
 ```
 
-## sequence state test
-Create a state that executes multiple states in order.
+## Create a state that executes multiple states in order.
+![view](https://github.com/koki-ogura/smach_test/blob/master/image/smach_test_seq.png)
 ```
 $ rosrun smach_test smach_test_seq.py
 ```
 
-## concurrence state test
-Create a state that executes multiple states simultaneously.
+## Create a state that executes multiple states simultaneously.
+![view](https://github.com/koki-ogura/smach_test/blob/master/image/smach_test_con.png)
 ```
 $ rosrun smach_test smach_test_con.py
 ```
 
-## iterator state test
-Create a state that repeatedly executes the same states.
+## Create a state that repeatedly executes the same states.
+![view](https://github.com/koki-ogura/smach_test/blob/master/image/smach_test_ite.png)
 ```
 $ rosrun smach_test smach_test_ite.py
 ```
