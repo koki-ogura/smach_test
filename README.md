@@ -4,11 +4,12 @@
 
 ### Prepare for smach and smach_viewer (ubuntu 18.04 melodic)
 ```
-$ sudo apt install python-wxgtk2.8
-$ sudo apt install python-gi-cairo
+# obsolete $ sudo apt install python-wxgtk2.8
+# obsolete $ sudo apt install python-gi-cairo
+# obsolute $ pip install wxPython
 $ cd ~/catekin_ws/src
 $ git clone https://github.com/ros/executive_smach.git
-$ git clone -b melodic-devel https://github.com/k-okada/executive_smach_visualization.git
+# obsolute $ git clone -b melodic-devel https://github.com/k-okada/executive_smach_visualization.git
 $ cd ~/catekin_ws
 $ catekin_make
 ```
@@ -28,7 +29,7 @@ $ roscore
 
 ### execute smach_viewer
 ```
-$ rosrun smach_viewer smach_viewer.py
+# obsolete $ rosrun smach_viewer smach_viewer.py
 ```
 
 ### Create a state that executes multiple states in order.
