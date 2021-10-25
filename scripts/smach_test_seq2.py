@@ -49,22 +49,29 @@ def main():
     rospy.init_node('smach_example_state_machine')
 
     # Create a SMACH state machine
-    sm = smach.StateMachine(outcomes = ['succeeded', 'aborted', 'preempted'])
+    #sm = smach.StateMachine(outcomes = ['succeeded', 'aborted', 'preempted'])
+    sm = smach.Sequence(outcomes = ['succeeded', 'aborted', 'preempted'],
+                        connector_outcome = 'succeeded')
 
     # Open the container
     with sm:
+        '''
         smach.StateMachine.add('FOO', Foo(), transitions={'succeeded':'BAR'})
         smach.StateMachine.add('BAR', Bar(), transitions={'succeeded':'BAS'})
         smach.StateMachine.add('BAS', Bas())
+        '''
+        smach.Sequence.add('FOO', Foo())
+        smach.Sequence.add('BAR', Bar())
+        smach.Sequence.add('BAS', Bas())
 
     # Create and start the introspection server
-    #sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
-    #sis.start()
+    sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
+    sis.start()
 
     # Execute SMACH plan
     outcome = sm.execute()
-    #rospy.spin()
-    #sis.stop()
+    rospy.spin()
+    sis.stop()
 
 if __name__ == '__main__':
     main()
